@@ -1,0 +1,35 @@
+.companyListContainer {
+  width: 500px;
+}
+.companyListContainer .btnShowMore {
+  width: 100%;
+  height: 50px;
+  border: 1px solid gray;
+  text-align: center;
+  cursor: pointer;
+}
+.companyListContainer .companyList {
+  padding-left: 0;
+}
+.companyListContainer .companyList li {
+  height: 40px;
+  display: flex;
+  border-top: 0px solid gray;
+  border-bottom: 1px solid gray;
+  /* padding-top: 10px; */
+  cursor: pointer;
+}
+.companyListContainer .companyList li:hover {
+  background-color: #cfdae0;
+}
+.companyListContainer .companyList li:nth-child(2n-1) {
+  background-color: #EEEEEE;
+}
+.companyListContainer .companyList li div {
+  height: 100%;
+  padding-left: 10px;
+  line-height: 35px;
+}
+.companyListContainer .companyList li div:nth-child(1) { width: 30px; }
+.companyListContainer .companyList li div:nth-child(2) { width: 100px; }
+.companyListContainer .companyList li div:nth-child(3) {}

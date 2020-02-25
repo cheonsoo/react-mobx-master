@@ -56,7 +56,10 @@ module.exports = {
     new CleanWebpackPlugin({
       cleanAfterEveryBuildPatterns: ['dist']
     }),
-    new HtmlWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      template: "./src/index.html",
+      filename: "./index.html"
+    }),
     new webpack.HotModuleReplacementPlugin(),
     new MiniCssExtractPlugin()
   ],

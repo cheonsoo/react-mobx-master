@@ -1,8 +1,17 @@
-import { fp } from 'lodash';
-import './css/main.css';
+import React from "react";
+import ReactDOM from "react-dom";
+import { Provider } from "mobx-react";
+import App from "./App";
+import * as serviceWorker from "./serviceWorker";
+import RootStore from './stores';
 
-const foo = 'hello~~~';
+const root = new RootStore();
 
-fp.defaults({ 'a': 1 }, { 'a': 3, 'b': 2 });
+ReactDOM.render(
+  <Provider {...root}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+);
 
-console.log(foo);
+serviceWorker.unregister();
