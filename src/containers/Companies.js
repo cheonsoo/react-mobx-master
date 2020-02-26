@@ -1,5 +1,7 @@
 import React, { Component } from "react"
+import { withRouter } from "react-router";
 import { observer, inject } from "mobx-react"
+import CompanyList from '../components/CompanyList';
 import '../css/company.css';
 
 @inject(stores => ({
@@ -7,7 +9,7 @@ import '../css/company.css';
   user: stores.user
 }))
 @observer
-export default class TodoList extends Component {
+class Companies extends Component {
 
   constructor(props) {
     super(props);
@@ -27,29 +29,18 @@ export default class TodoList extends Component {
   render() {
     const { company, user } = this.props;
 
-    const companyList = company.companies.map((item, idx) => (
-      <li key={idx}>
-        <div>{item.id}</div>
-        <div>{item.name}</div>
-        <div>{item.desc}</div>
-      </li>
-    ));
     return <div className='companyListContainer'>
       <div>
         <h3>Company List</h3>
         <h3>user: {user.user.name}</h3>
+        <button onClick={this.props.history.goBack}>back</button>
       </div>
       <div>
-        <ul className='companyList'>
-          <li>
-            <div>ID</div>
-            <div>NAME</div>
-            <div>DESC</div>
-          </li>
-          {companyList}
-        </ul>
+        <CompanyList companies={company.companies}/>
         <div className='btnShowMore' onClick={this.handleShowMore}>Show More</div>
       </div>
     </div>
   }
 }
+
+export default withRouter(Companies);

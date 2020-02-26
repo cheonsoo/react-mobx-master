@@ -1,6 +1,6 @@
 import { autorun, observable, action, configure } from "mobx"
 
-// configure({ enforceActions: true });
+configure({ enforceActions: true });
 
 class CompanyStore {
   @observable companies = [];
@@ -22,9 +22,9 @@ class CompanyStore {
     };
     fetch(encodeURI(url), options)
     .then(res => res.json())
-    .then(data => {
-      console.log(data);
-      this.setCompanies(data);
+    .then(res => {
+      console.log(res.data);
+      this.setCompanies(res.data);
     });
   }
 }

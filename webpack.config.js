@@ -9,7 +9,8 @@ module.exports = {
   entry: './src/index.js',
   output: {
     filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: '/'
   },
   optimization: {
     splitChunks: {
@@ -68,6 +69,7 @@ module.exports = {
     port: '3001',
     // hot: true,
     // inline: true,
-    open: 'Google Chrome'
+    open: 'Google Chrome',
+    historyApiFallback: true
   }
 };

@@ -1,5 +1,5 @@
 .companyListContainer {
-  width: 500px;
+  width: 100%;
 }
 .companyListContainer .btnShowMore {
   width: 100%;
@@ -19,11 +19,11 @@
   /* padding-top: 10px; */
   cursor: pointer;
 }
-.companyListContainer .companyList li:hover {
-  background-color: #cfdae0;
-}
 .companyListContainer .companyList li:nth-child(2n-1) {
   background-color: #EEEEEE;
+}
+.companyListContainer .companyList li:hover {
+  background-color: #cfdae0;
 }
 .companyListContainer .companyList li div {
   height: 100%;
